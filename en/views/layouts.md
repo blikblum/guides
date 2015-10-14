@@ -157,11 +157,11 @@ var Layout = Marionette.LayoutView.extend({
     );
   },
 
-  onChildviewSaveModel: function(child, model) {
+  onChildviewSaveModel: function(child, params) {
     var list = this.getChildView('list');
-    var newModel = model.clone();
+    var newModel = params.model.clone();
     list.collection.add(newModel);
-    model.clear();
+    params.model.clear();
   }
 });
 ```
